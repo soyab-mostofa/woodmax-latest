@@ -43,9 +43,16 @@ const CardImage = ({ image }) => {
   );
 };
 
-const ProductCard = ({ product, mw = 'sm', p = '5' }) => {
+const ProductCard = ({ product, p = '5' }) => {
   return (
-    <Box maxW={mw} p={p} borderWidth="1px" rounded="md">
+    <Box
+      maxW={'sm'}
+      position="relative"
+      flexBasis={'100%'}
+      p={p}
+      borderWidth="1px"
+      rounded="md"
+    >
       <Box>
         {product.productImage.map((image) => (
           <CardImage key={image.id} image={image} />

@@ -7,18 +7,24 @@ import { VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 import ProductCard from '../ProductCard';
+import useEmblaCarousel from 'embla-carousel-react';
+import { Box } from '@chakra-ui/react';
 
 const FeaturedProducts = ({ products }) => {
+  const [emblaRef] = useEmblaCarousel({ loop: false, align: 'start' });
+
   return (
-    <Container maxW={'4xl'}>
+    <Box>
       <Heading textAlign={'center'} my={8}>
         Featured Products
       </Heading>
-      <Stack direction={['column', 'row']}>
-        {products.map((product) => (
-          <ProductCard product={product} mw={'60'} key={product.id} />
-        ))}
-      </Stack>
+      <Box overflow="hidden" ref={emblaRef}>
+        <Stack spacing={8} direction={['row']}>
+          {products.map((product) => (
+            <ProductCard product={product} mw={'60'} key={product.id} />
+          ))}
+        </Stack>
+      </Box>
       <Flex justify="center" mt={8}>
         <Link href={'/products/all-products'}>
           <Button variant="outline" mx={'auto'}>
@@ -26,7 +32,7 @@ const FeaturedProducts = ({ products }) => {
           </Button>
         </Link>
       </Flex>
-    </Container>
+    </Box>
   );
 };
 

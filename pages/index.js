@@ -4,6 +4,7 @@ import Image from 'next/image';
 import FeaturedProducts from '../components/HomeComponents/FeaturedProducts';
 import HeroBanner from '../components/HomeComponents/HeroBanner';
 import HomeCategory from '../components/HomeComponents/HomeCategory';
+import LowBanner from '../components/HomeComponents/LowBanner';
 import client from '../features/Apollo';
 import styles from '../styles/Home.module.css';
 
@@ -14,6 +15,7 @@ export default function Home(props) {
       <HeroBanner />
       <HomeCategory />
       <FeaturedProducts products={products} />
+      <LowBanner />
     </div>
   );
 }

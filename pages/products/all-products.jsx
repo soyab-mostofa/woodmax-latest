@@ -1,19 +1,20 @@
 import { gql } from '@apollo/client';
 import React from 'react';
 import client from '../../features/Apollo';
-import { Stack } from '@chakra-ui/react';
-
+import { Stack, Container } from '@chakra-ui/react';
 import ProductCard from '../../components/ProductCard';
 
 const AllProductsPage = (props) => {
   const products = props.data.products;
 
   return (
-    <Stack direction={['column', 'row']}>
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
-    </Stack>
+    <Container maxW={'4xl'} mt={4}>
+      <Stack direction={['column', 'row']}>
+        {products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </Stack>
+    </Container>
   );
 };
 

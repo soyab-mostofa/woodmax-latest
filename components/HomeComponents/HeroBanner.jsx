@@ -29,7 +29,7 @@ const HeroBanner = () => {
         translateY={{ base: -10, sm: 0 }}
       >
         <Image
-          src="/assets/hero-image.jpg"
+          src="/assets/hero-image.jpeg"
           alt="hero image"
           layout="fill"
           objectFit="contain"
@@ -46,7 +46,7 @@ const HeroBanner = () => {
         <Heading fontSize={'2xl'}>Furniture</Heading>
         <Text>
           Discover our expanded assortment of over 100 furniture pieces by
-          designers who are represented in MoMA’s collection.
+          designers who are represented in Woodmax collection.
         </Text>
         <Link href={'/products/all-products'}>
           <Button variant={'outline'} borderColor="blackAlpha.900">

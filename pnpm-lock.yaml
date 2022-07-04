@@ -5,6 +5,7 @@ specifiers:
   '@chakra-ui/react': ^2.2.1
   '@emotion/react': ^11
   '@emotion/styled': ^11
+  embla-carousel-react: 7.0.0-rc01
   eslint: 8.19.0
   eslint-config-next: 12.2.0
   framer-motion: ^6
@@ -20,6 +21,7 @@ dependencies:
   '@chakra-ui/react': 2.2.1_2gkyz5c4kepvvphfdowftlp5pe
   '@emotion/react': 11.9.3_react@18.2.0
   '@emotion/styled': 11.9.3_jhgplt4fmhans76oq3ok5iox2u
+  embla-carousel-react: 7.0.0-rc01_react@18.2.0
   framer-motion: 6.3.16_biqbaboplfbrettd7655fr4n2y
   graphql: 16.5.0
   next: 12.2.0_biqbaboplfbrettd7655fr4n2y
@@ -1671,6 +1673,19 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /embla-carousel-react/7.0.0-rc01_react@18.2.0:
+    resolution: {integrity: sha512-PvgXEtMDzSIEVHOom35ZklEkbeamtEghXQ6ewlHR/qRznnK1udXJSxbZKZEDGRBZ/TMMMYgeKRwlbOxSDNmDKA==}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      embla-carousel: 7.0.0-rc01
+      react: 18.2.0
+    dev: false
+
+  /embla-carousel/7.0.0-rc01:
+    resolution: {integrity: sha512-IBTSKcPw7u9K0zoLvsnWYsijKsI0msFqzNp6ASIthTXiMZNJNGQt8k0ax7KqUVinDZeNM07WPWqYsjrvUM/Epw==}
+    dev: false
 
   /emoji-regex/9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
