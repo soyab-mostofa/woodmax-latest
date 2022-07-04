@@ -20,7 +20,7 @@ import {
 
 const Footer = () => {
   return (
-    <Container maxWidth={'4xl'}>
+    <Container maxWidth={'6xl'}>
       <Stack direction={['column', 'row']} py={8} justify={'space-between'}>
         <VStack align={'center'}>
           <Link href="/">
@@ -30,16 +30,24 @@ const Footer = () => {
           </Link>
           <HStack spacing={4}>
             <Link href="/">
-              <BsFacebook size={24} />
+              <span>
+                <BsFacebook size={24} />
+              </span>
             </Link>
             <Link href="/">
-              <BsInstagram size={24} />
+              <span>
+                <BsInstagram size={24} />
+              </span>
             </Link>
             <Link href="/">
-              <BsPinterest size={24} />
+              <span>
+                <BsPinterest size={24} />
+              </span>
             </Link>
             <Link href="/">
-              <BsLinkedin size={24} />
+              <span>
+                <BsLinkedin size={24} />
+              </span>
             </Link>
           </HStack>
         </VStack>

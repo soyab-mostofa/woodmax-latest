@@ -18,7 +18,7 @@ const contents = [
 
 const HomeCategory = () => {
   return (
-    <Container maxW={'4xl'} pt={'12'}>
+    <Container maxW={'6xl'} pt={'12'}>
       <Stack direction={['column', 'row']} spacing="24px">
         <VStack align={'flex-start'} flexBasis="100%">
           <Heading>Categories</Heading>

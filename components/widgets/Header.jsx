@@ -9,6 +9,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import React, { useState } from 'react';
 import { BsCart, BsPerson, BsSearch } from 'react-icons/bs';
+import DrawerExample from './Drawer';
 
 const HomeLinks = [
   {
@@ -67,12 +68,14 @@ const Header = () => {
             </Box>
           </Link>
           <HStack spacing={5}>
-            <InputGroup>
-              <Input size="md" placeholder="Search for furniture" />
-              <InputRightElement>
-                <BsSearch size={18} />
-              </InputRightElement>
-            </InputGroup>
+            <Show above="md">
+              <InputGroup>
+                <Input size="md" placeholder="Search for furniture" />
+                <InputRightElement>
+                  <BsSearch size={18} />
+                </InputRightElement>
+              </InputGroup>
+            </Show>
             <Link href="/account">
               <BsPerson size={20} />
             </Link>
@@ -80,6 +83,9 @@ const Header = () => {
               <BsCart size={20} />
             </Link>
           </HStack>
+          <Show below="md">
+            <DrawerExample links={HomeLinks} />
+          </Show>
         </Stack>
         <Show above="md">
           <HStack justify={'center'} mt={3}>

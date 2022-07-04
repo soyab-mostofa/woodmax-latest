@@ -12,10 +12,10 @@ const HeroBanner = () => {
   return (
     <Container
       overflow="hidden"
-      maxW={'4xl'}
+      maxW={'6xl'}
       position="relative"
       width={'full'}
-      height={['md', '72']}
+      height={['md', '80']}
       mt={10}
       backgroundColor={'#EFEFEF'}
     >
@@ -29,7 +29,8 @@ const HeroBanner = () => {
         translateY={{ base: -10, sm: 0 }}
       >
         <Image
-          src="/assets/hero-image.jpeg"
+          priority
+          src="/assets/hero-image.jpg"
           alt="hero image"
           layout="fill"
           objectFit="contain"

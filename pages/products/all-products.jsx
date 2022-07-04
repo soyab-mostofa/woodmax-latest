@@ -3,13 +3,15 @@ import React from 'react';
 import client from '../../features/Apollo';
 import { Stack, Container } from '@chakra-ui/react';
 import ProductCard from '../../components/ProductCard';
+import FilterBar from '../../components/widgets/FilterBar';
 
 const AllProductsPage = (props) => {
   const products = props.data.products;
 
   return (
     <Container maxW={'4xl'} mt={4}>
-      <Stack direction={['column', 'row']}>
+      <FilterBar />
+      <Stack align={'center'} direction={['column', 'row']}>
         {products.map((product) => (
           <ProductCard product={product} key={product.id} />
         ))}
@@ -23,16 +25,19 @@ export async function getStaticProps() {
     query: gql`
       query getProducts {
         products {
-          id
           title
           available
-          description
           price
+          id
+          rating
+          rooms {
+            id
+          }
+          slug
+          description
           productImage {
             url
             id
-            stage
-            mimeType
           }
         }
       }
