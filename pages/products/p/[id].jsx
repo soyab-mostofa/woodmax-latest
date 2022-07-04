@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import { Text, Button, Container, Heading } from '@chakra-ui/react';
-
+import ClientOnly from '../../../components/ClientOnly';
 import Rating from 'react-rating';
 import ProductImage from '../../../components/widgets/ProductImage';
 import client from '../../../features/Apollo';
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
     params: { id: p.id },
   }));
 
-  return { paths: paths || [], fallback: true };
+  return { paths: paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
