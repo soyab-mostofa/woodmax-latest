@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import React from 'react';
 import client from '../../features/Apollo';
-import { Stack, Container } from '@chakra-ui/react';
+import { Stack, Container, Grid, GridItem } from '@chakra-ui/react';
 import ProductCard from '../../components/ProductCard';
 import FilterBar from '../../components/widgets/FilterBar';
 
@@ -11,11 +11,13 @@ const AllProductsPage = (props) => {
   return (
     <Container maxW={'4xl'} mt={4}>
       <FilterBar />
-      <Stack align={'center'} direction={['column', 'row']}>
+      <Grid autoColumns={'50%'} templateColumns={'1fr 1fr'} width="100%">
         {products.map((product) => (
-          <ProductCard product={product} key={product.id} />
+          <GridItem key={product.id}>
+            <ProductCard product={product} />
+          </GridItem>
         ))}
-      </Stack>
+      </Grid>
     </Container>
   );
 };

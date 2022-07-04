@@ -43,9 +43,10 @@ const CardImage = ({ image }) => {
   );
 };
 
-const ProductCard = ({ product, p = '5' }) => {
+const ProductCard = ({ width, product, p = '5' }) => {
   return (
     <Box
+      w={width}
       maxW={'sm'}
       position="relative"
       flexBasis={'100%'}
