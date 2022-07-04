@@ -67,7 +67,9 @@ const Header = () => {
           <HStack spacing={5}>
             <InputGroup>
               <Input size="md" placeholder="Search for furniture" />
-              <InputRightElement children={<BsSearch size={18} />} />
+              <InputRightElement>
+                <BsSearch size={18} />
+              </InputRightElement>
             </InputGroup>
             <Link href="/account">
               <BsPerson size={20} />
