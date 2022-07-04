@@ -1,15 +1,7 @@
-import {
-  LinkOverlay,
-  Box,
-  Heading,
-  Text,
-  Button,
-  Badge,
-} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
 
-const CardImage = ({ image }) => {
+const ProductImage = ({ image }) => {
   const shimmer = (w, h) => `
         <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
@@ -30,7 +22,12 @@ const CardImage = ({ image }) => {
       : window.btoa(str);
 
   return (
-    <Box position={'relative'} h={[40, 52]} w={'full'}>
+    <Box
+      position={'relative'}
+      p={4}
+      h={['80', '96', 'md']}
+      w={['full', 'full', '8xl']}
+    >
       <Image
         src={image.url}
         objectFit={'contain'}
@@ -42,38 +39,4 @@ const CardImage = ({ image }) => {
     </Box>
   );
 };
-
-const ProductCard = ({ width, product, p = '5' }) => {
-  return (
-    <Box
-      w={width}
-      maxW={'sm'}
-      position="relative"
-      flexBasis={'100%'}
-      p={p}
-      borderWidth="1px"
-      rounded="md"
-    >
-      <Box>
-        {product.productImage.map((image) => (
-          <CardImage key={image.id} image={image} />
-        ))}
-      </Box>
-
-      <Heading size="md" my="2">
-        <Link href={`/products/p/${product.id}`}>{product.title}</Link>
-      </Heading>
-
-      <Badge variant={'solid'} colorScheme="green">
-        Taka {product.price}
-      </Badge>
-      <Text noOfLines={3}>{product.description}</Text>
-
-      <Button mt={2} variant={'solid'}>
-        ADD TO CART
-      </Button>
-    </Box>
-  );
-};
-
-export default ProductCard;
+export default ProductImage;

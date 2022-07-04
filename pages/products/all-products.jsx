@@ -2,6 +2,7 @@ import { gql } from '@apollo/client';
 import React from 'react';
 import client from '../../features/Apollo';
 import { Stack, Container, Grid, GridItem } from '@chakra-ui/react';
+import getAllProducts from '../../features/queries/getAllProducts';
 import ProductCard from '../../components/ProductCard';
 import FilterBar from '../../components/widgets/FilterBar';
 
@@ -11,7 +12,12 @@ const AllProductsPage = (props) => {
   return (
     <Container maxW={'4xl'} mt={4}>
       <FilterBar />
-      <Grid autoColumns={'50%'} templateColumns={'1fr 1fr'} width="100%">
+      <Grid
+        gap={'4'}
+        justifyContent={'center'}
+        templateColumns={{ base: '1fr, 1fr', md: '1fr 1fr 1fr 1fr' }}
+        width="100%"
+      >
         {products.map((product) => (
           <GridItem key={product.id}>
             <ProductCard product={product} />
@@ -24,26 +30,7 @@ const AllProductsPage = (props) => {
 
 export async function getStaticProps() {
   const data = await client.query({
-    query: gql`
-      query getProducts {
-        products {
-          title
-          available
-          price
-          id
-          rating
-          rooms {
-            id
-          }
-          slug
-          description
-          productImage {
-            url
-            id
-          }
-        }
-      }
-    `,
+    query: getAllProducts,
   });
 
   return {

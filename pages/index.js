@@ -7,6 +7,7 @@ import HeroBanner from '../components/HomeComponents/HeroBanner';
 import HomeCategory from '../components/HomeComponents/HomeCategory';
 import LowBanner from '../components/HomeComponents/LowBanner';
 import client from '../features/Apollo';
+import getAllProducts from '../features/queries/getAllProducts';
 import useStore from '../features/store';
 import styles from '../styles/Home.module.css';
 
@@ -29,23 +30,7 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const data = await client.query({
-    query: gql`
-      query getProducts {
-        products {
-          id
-          title
-          available
-          description
-          price
-          productImage {
-            url
-            id
-            stage
-            mimeType
-          }
-        }
-      }
-    `,
+    query: getAllProducts,
   });
 
   return {

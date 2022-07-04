@@ -19,7 +19,7 @@ const FeaturedProducts = ({ products }) => {
         Featured Products
       </Heading>
       <Box overflow="hidden" ref={emblaRef}>
-        <Stack spacing={8} direction={['row']}>
+        <Stack spacing={4} direction={['row']}>
           {products.map((product) => (
             <ProductCard product={product} mw={'60'} key={product.id} />
           ))}

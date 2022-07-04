@@ -22,7 +22,7 @@ function DrawerExample({ links }) {
   return (
     <>
       <Button ref={btnRef} variant="link" onClick={onOpen}>
-        <AiOutlineMenu />
+        <AiOutlineMenu size={30} />
       </Button>
       <Drawer
         isOpen={isOpen}

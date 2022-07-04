@@ -40,7 +40,8 @@ const HeroBanner = () => {
         align={'flex-start'}
         pos={'relative'}
         marginEnd={'auto'}
-        maxWidth={'40'}
+        maxWidth={'64'}
+        spacing={8}
         ms={{ base: 6, md: 14 }}
         pt={'7'}
       >

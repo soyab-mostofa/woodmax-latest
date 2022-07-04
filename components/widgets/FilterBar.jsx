@@ -16,7 +16,7 @@ const FilterBar = () => {
 
   console.log(filteredProducts);
   return (
-    <Stack direction={['column', 'row']}>
+    <Stack mb={4} direction={['column', 'row']}>
       <Select></Select>
       <RangeSlider
         defaultValue={[10, 90]}

@@ -48,6 +48,7 @@ const NavLink = ({ link }) => {
       <NextLink href={link.link}>
         <Link
           onMouseEnter={() => setShowMenu(false)}
+          fontSize={18}
           textTransform={'uppercase'}
         >
           {link.name}
@@ -60,29 +61,29 @@ const NavLink = ({ link }) => {
 const Header = () => {
   return (
     <Box>
-      <Container maxW="4xl">
+      <Container maxW="6xl">
         <Stack direction={['row']} align="center" justify="space-between">
           <Link href="/">
             <Box pos={'relative'} h={24} width={24}>
               <Image layout="fill" alt="logo" src="/w-logo-main.svg" />
             </Box>
           </Link>
-          <HStack spacing={5}>
-            <Show above="md">
+          <Show above="md">
+            <HStack spacing={5}>
               <InputGroup>
                 <Input size="md" placeholder="Search for furniture" />
                 <InputRightElement>
                   <BsSearch size={18} />
                 </InputRightElement>
               </InputGroup>
-            </Show>
-            <Link href="/account">
-              <BsPerson size={20} />
-            </Link>
-            <Link href="/account">
-              <BsCart size={20} />
-            </Link>
-          </HStack>
+              <Link href="/account">
+                <BsPerson size={20} />
+              </Link>
+              <Link href="/account">
+                <BsCart size={20} />
+              </Link>
+            </HStack>
+          </Show>
           <Show below="md">
             <DrawerExample links={HomeLinks} />
           </Show>
