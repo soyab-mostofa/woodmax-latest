@@ -7,6 +7,7 @@ import {
   Badge,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CardImage = ({ image }) => {
   const shimmer = (w, h) => `
@@ -51,7 +52,7 @@ const ProductCard = ({ product, mw = 'sm', p = '5' }) => {
         ))}
       </Box>
       <Heading size="md" my="2">
-        <LinkOverlay href="#">{product.title}</LinkOverlay>
+        <Link href="#">{product.title}</Link>
       </Heading>
       <Badge variant={'solid'} colorScheme="green">
         Taka {product.price}

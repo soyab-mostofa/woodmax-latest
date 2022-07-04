@@ -61,9 +61,11 @@ const Header = () => {
     <Box>
       <Container maxW="4xl">
         <Stack direction={['row']} align="center" justify="space-between">
-          <Box pos={'relative'} h={24} width={24}>
-            <Image layout="fill" alt="logo" src="/w-logo-main.svg" />
-          </Box>
+          <Link href="/">
+            <Box pos={'relative'} h={24} width={24}>
+              <Image layout="fill" alt="logo" src="/w-logo-main.svg" />
+            </Box>
+          </Link>
           <HStack spacing={5}>
             <InputGroup>
               <Input size="md" placeholder="Search for furniture" />
