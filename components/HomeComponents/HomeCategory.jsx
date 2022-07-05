@@ -29,7 +29,7 @@ const HomeCategory = ({ categories }) => {
           <Grid width={'full'} gridTemplateColumns={'repeat(3, 1fr)'}>
             {categories.map((cat) => (
               <VStack key={cat.id}>
-                <Box position={'relative'} h={'16'} w={'16'} bo>
+                <Box position={'relative'} h={'16'} w={'16'}>
                   <Image
                     src={cat.image.url}
                     objectFit={'contain'}
