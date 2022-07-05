@@ -31,15 +31,22 @@ function DrawerExample({ links }) {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
+        <DrawerContent backgroundColor={'blackAlpha.900'}>
+          <DrawerCloseButton color={'whiteAlpha.900'} size={'lg'} />
           <DrawerHeader></DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody mt={'28'}>
             <VStack textTransform={'capitalize'}>
               {links.map((link) => (
                 <NextLink key={link.name} href="/">
-                  <Link>{link.name}</Link>
+                  <Link
+                    fontWeight={'bold'}
+                    letterSpacing={'wider'}
+                    fontSize="xl"
+                    color={'whiteAlpha.900'}
+                  >
+                    {link.name}
+                  </Link>
                 </NextLink>
               ))}
             </VStack>

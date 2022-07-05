@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { Text, Button, Container, Heading } from '@chakra-ui/react';
+import { Text, Button, Container, Heading, Badge } from '@chakra-ui/react';
 import ClientOnly from '../../../components/ClientOnly';
 import Rating from 'react-rating';
 import ProductImage from '../../../components/widgets/ProductImage';
@@ -27,11 +27,28 @@ function Product({ product }) {
             {product.title}
           </Heading>
           <VStack spacing={2} align="flex-start">
-            <Heading size={['sm', 'md']}>Rating</Heading>
-            <Rating readonly placeholderRating={product.rating} />
+            <Badge variant={'solid'}>
+              <Heading size={['sm', 'md']}>Price</Heading>
+            </Badge>
+
+            <Text fontWeight={'thin'} fontSize={['25px', null, '35px']}>
+              {product.price} Taka
+            </Text>
+          </VStack>
+          <VStack spacing={2} align="flex-start">
+            <Badge variant={'solid'}>
+              <Heading size={['sm', 'md']}>Rating</Heading>
+            </Badge>
+            <Rating
+              readonly
+              className="rating"
+              placeholderRating={product.rating}
+            />
           </VStack>
           <VStack rounded={'2xl'} spacing={2} align="flex-start">
-            <Heading size={['sm', 'md']}>Description</Heading>
+            <Badge variant={'solid'}>
+              <Heading size={['sm', 'md']}>Description</Heading>
+            </Badge>
             <Text>{product.description}</Text>
           </VStack>
           <Button variant={'solid'}>Add to cart</Button>
