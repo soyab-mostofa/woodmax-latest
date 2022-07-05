@@ -60,11 +60,18 @@ const ProductCard = ({ width, product, p = '5' }) => {
         ))}
       </Box>
 
-      <Heading size="md" my="2">
+      <Heading
+        _hover={{
+          background: 'white',
+          color: 'teal.500',
+        }}
+        size="md"
+        my="2"
+      >
         <Link href={`/products/p/${product.id}`}>{product.title}</Link>
       </Heading>
 
-      <Badge variant={'solid'} colorScheme="green">
+      <Badge variant={'solid'} fontSize={[16, 20]} colorScheme="green">
         Taka {product.price}
       </Badge>
       <Text noOfLines={3}>{product.description}</Text>

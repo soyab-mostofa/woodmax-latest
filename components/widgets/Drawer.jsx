@@ -1,5 +1,3 @@
-import {} from '@chakra-ui/react';
-import { Link } from '@chakra-ui/react';
 import {
   Drawer,
   DrawerBody,
@@ -10,12 +8,15 @@ import {
   DrawerCloseButton,
   useDisclosure,
   Button,
+  Link,
+  Spinner,
+  Scale,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import NextLink from 'next/link';
 import { VStack } from '@chakra-ui/react';
-function DrawerExample({ links }) {
+function DrawerExample({ categories }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
 
@@ -36,20 +37,33 @@ function DrawerExample({ links }) {
           <DrawerHeader></DrawerHeader>
 
           <DrawerBody mt={'28'}>
-            <VStack textTransform={'capitalize'}>
-              {links.map((link) => (
-                <NextLink key={link.name} href="/">
-                  <Link
-                    fontWeight={'bold'}
-                    letterSpacing={'wider'}
-                    fontSize="xl"
-                    color={'whiteAlpha.900'}
-                  >
-                    {link.name}
-                  </Link>
-                </NextLink>
-              ))}
-            </VStack>
+            {categories ? (
+              <VStack spacing={'4'} textTransform={'capitalize'}>
+                {categories.map((category) => {
+                  return (
+                    <NextLink
+                      key={category.id}
+                      href={`/${category.__typename.toLowerCase()}/${
+                        category.slug
+                      }`}
+                    >
+                      <Link
+                        onClick={onClose}
+                        fontSize={'18px'}
+                        fontWeight="semibold"
+                        color={'whiteAlpha.900'}
+                      >
+                        {category.title}
+                      </Link>
+                    </NextLink>
+                  );
+                })}
+              </VStack>
+            ) : (
+              <>
+                <Spinner />
+              </>
+            )}
           </DrawerBody>
 
           <DrawerFooter></DrawerFooter>

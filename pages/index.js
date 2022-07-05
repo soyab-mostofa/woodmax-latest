@@ -14,6 +14,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home(props) {
   const fetchProducts = useStore((state) => state.fetchProducts);
+
   useState(() => {
     fetchProducts();
   }, []);

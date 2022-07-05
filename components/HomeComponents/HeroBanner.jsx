@@ -4,6 +4,7 @@ import { Heading } from '@chakra-ui/react';
 import { Box } from '@chakra-ui/react';
 import { VStack } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -45,13 +46,32 @@ const HeroBanner = () => {
         ms={{ base: 6, md: 14 }}
         pt={'7'}
       >
-        <Heading fontSize={'2xl'}>Furniture</Heading>
-        <Text>
+        <Heading
+          as={motion.h2}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition="0.1s linear"
+          fontSize={'2xl'}
+        >
+          Furniture
+        </Heading>
+        <Text
+          as={motion.p}
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition="0.1s linear"
+        >
           Discover our expanded assortment of over 100 furniture pieces by
           designers who are represented in Woodmax collection.
         </Text>
         <Link href={'/products/all-products'}>
-          <Button variant={'outline'} borderColor="blackAlpha.900">
+          <Button
+            as={motion.button}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            variant={'outline'}
+            borderColor="blackAlpha.900"
+          >
             Shop All Furniture
           </Button>
         </Link>

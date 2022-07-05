@@ -1,17 +1,20 @@
 import { gql } from '@apollo/client';
-import { Text, Button, Container, Heading, Badge } from '@chakra-ui/react';
-import ClientOnly from '../../../components/ClientOnly';
+import {
+  Text,
+  Button,
+  Container,
+  Heading,
+  VStack,
+  Stack,
+  Badge,
+} from '@chakra-ui/react';
 import Rating from 'react-rating';
 import ProductImage from '../../../components/widgets/ProductImage';
 import client from '../../../features/Apollo';
-
 import getProduct from '../../../features/queries/getProduct';
 
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { VStack } from '@chakra-ui/react';
-import { Stack } from '@chakra-ui/react';
-
 function Product({ product }) {
+  if (!product) return null;
   return (
     <Container maxW={'6xl'} my={'16'}>
       <Stack direction={['column', null, 'row']}>
@@ -74,7 +77,7 @@ export async function getStaticPaths() {
     params: { id: p.id },
   }));
 
-  return { paths: paths, fallback: false };
+  return { paths: paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
