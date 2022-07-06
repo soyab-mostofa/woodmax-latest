@@ -67,7 +67,7 @@ const Header = () => {
                     Categories
                   </MenuButton>
                   <ClientOnly>
-                    <MenuList>
+                    <MenuList position="relative" zIndex="100">
                       {loading ? (
                         <> </>
                       ) : (
