@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <Box>
-      <Container maxW="6xl" borderBottom={'1px'}>
+      <Container maxW="6xl" boxShadow="md">
         <Stack
           direction={['row']}
           align="center"
@@ -74,7 +74,9 @@ const Header = () => {
                         <>
                           {data?.categories.map((c) => (
                             <MenuItem textTransform="capitalize" key={c.id}>
-                              {c.title}
+                              <Link href={`/category/${c.slug}`}>
+                                {c.title}
+                              </Link>
                             </MenuItem>
                           ))}
                         </>
@@ -82,7 +84,7 @@ const Header = () => {
                     </MenuList>
                   </ClientOnly>
                 </Menu>
-                <NextLink href={`/categories`}>
+                <NextLink href={`/products/all-products`}>
                   <Link fontWeight="bold">Products</Link>
                 </NextLink>
               </HStack>

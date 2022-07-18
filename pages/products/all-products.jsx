@@ -1,29 +1,31 @@
 import { gql } from '@apollo/client';
-import React from 'react';
+import React, { useState } from 'react';
 import client from '../../features/Apollo';
-import { Stack, Container, Grid, GridItem } from '@chakra-ui/react';
+import { Stack, Container, Flex, GridItem } from '@chakra-ui/react';
 import getAllProducts from '../../features/queries/getAllProducts';
 import ProductCard from '../../components/ProductCard';
 import FilterBar from '../../components/widgets/FilterBar';
-
+import { removeDuplicates } from '../../helpers/removeDuplicates';
 const AllProductsPage = (props) => {
   const products = props.data.products;
+  const categories = products.map((p) => p.categories);
+  const mergeCategories = categories.flat(1);
+  const allCategories = removeDuplicates(mergeCategories.map((c) => c.title));
+  function removeDuplicates(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+  }
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
   return (
-    <Container maxW={'4xl'} mt={4}>
-      <FilterBar />
-      <Grid
-        gap={'4'}
-        justifyContent={'center'}
-        templateColumns={{ base: '1fr, 1fr', md: '1fr 1fr 1fr 1fr' }}
-        width="100%"
-      >
-        {products.map((product) => (
+    <Container maxW={'8xl'} mt={4}>
+      <FilterBar allCategories={allCategories} />
+      <Flex flexWrap={'wrap'} justify="center" gap={'4'}>
+        {filteredProducts.map((product) => (
           <GridItem key={product.id}>
             <ProductCard product={product} />
           </GridItem>
         ))}
-      </Grid>
+      </Flex>
     </Container>
   );
 };

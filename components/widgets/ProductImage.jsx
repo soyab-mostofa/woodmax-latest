@@ -25,12 +25,12 @@ const ProductImage = ({ image }) => {
     <Box
       position={'relative'}
       p={4}
-      h={['80', '96', 'md']}
-      w={['full', 'full', '8xl']}
+      h={['300px', '96', 'md']}
+      w={['full', 'full', 'full']}
     >
       <Image
         src={image.url}
-        objectFit={'contain'}
+        objectFit={'cover'}
         alt={image.id}
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}

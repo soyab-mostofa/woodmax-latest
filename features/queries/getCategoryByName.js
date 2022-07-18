@@ -7,6 +7,20 @@ export const GET_CATEGORY_BY_SLUG = gql`
       title
       products {
         id
+        title
+        description
+        available
+        price
+        productImage {
+          id
+          url
+        }
+        rating
+        categories {
+          ... on Category {
+            title
+          }
+        }
       }
     }
   }

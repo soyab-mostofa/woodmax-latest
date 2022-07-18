@@ -43,9 +43,19 @@ const CardImage = ({ image }) => {
   );
 };
 
-const ProductCard = ({ product, ...props }) => {
+const SmallProductCard = ({ product, ...props }) => {
   return (
-    <Box p={4} w={'sm'} borderWidth="1px" rounded="md" {...props}>
+    <Box
+      p={4}
+      w={'sm'}
+      position="relative"
+      flexFlow={0}
+      flexShrink={0}
+      flexBasis={'100%'}
+      borderWidth="1px"
+      rounded="md"
+      {...props}
+    >
       <Box width={'full'}>
         <CardImage
           key={product.productImage.id}
@@ -79,4 +89,4 @@ const ProductCard = ({ product, ...props }) => {
   );
 };
 
-export default ProductCard;
+export default SmallProductCard;

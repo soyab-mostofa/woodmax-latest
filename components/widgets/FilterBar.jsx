@@ -10,14 +10,17 @@ import {
 } from '@chakra-ui/react';
 import useStore from '../../features/store';
 
-const FilterBar = () => {
-  const filterProducts = useStore((state) => state.filterProducts);
-  const filteredProducts = useStore((state) => state.filteredProducts);
-
-  console.log(filteredProducts);
+const FilterBar = ({ allCategories }) => {
+  console.log(allCategories);
   return (
     <Stack mb={4} direction={['column', 'row']}>
-      <Select></Select>
+      <Select>
+        {allCategories.map((c) => (
+          <option key={c} value={c}>
+            {c.toUpperCase()}
+          </option>
+        ))}
+      </Select>
       <RangeSlider
         defaultValue={[10, 90]}
         onChangeEnd={(val) => filterProducts(val)}

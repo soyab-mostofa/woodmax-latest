@@ -17,7 +17,7 @@ function Product({ product }) {
   if (!product) return null;
   return (
     <Container maxW={'6xl'} my={'16'}>
-      <Stack direction={['column', null, 'row']}>
+      <Stack w={'full'} direction={['column', null, 'row']}>
         <ProductImage image={product.productImage[0]} />
 
         <VStack

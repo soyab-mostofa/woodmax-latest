@@ -1,11 +1,37 @@
 import client from '../../features/Apollo';
 import { gql } from '@apollo/client';
 import { GET_CATEGORY_BY_SLUG } from '../../features/queries/getCategoryByName';
+import { Heading, Button, Flex, Container } from '@chakra-ui/react';
+import ProductCard from '../../components/ProductCard';
+
+import Link from 'next/link';
 
 const CategoryPage = ({ category }) => {
   if (!category) return null;
-  console.log(category);
-  return <h1>category</h1>;
+
+  if (category.products.length === 0)
+    return (
+      <Container height={'48'} textAlign={'center'}>
+        <Heading textAlign={'center'} mt={40} mb={'8'} color={'blackAlpha.900'}>
+          No {category.title.toUpperCase()} found
+        </Heading>
+
+        <Link href="http://localhost:3000/products/all-products">
+          <Button variant={'link'}>Go to all products</Button>
+        </Link>
+      </Container>
+    );
+
+  return (
+    <Container maxW={'6xl'} pt={4}>
+      <Heading py={4}>{category.title}</Heading>
+      <Flex flexWrap={'wrap'} justify="center">
+        {category.products.map((p) => (
+          <ProductCard product={p} key={p.id} />
+        ))}
+      </Flex>
+    </Container>
+  );
 };
 
 export default CategoryPage;

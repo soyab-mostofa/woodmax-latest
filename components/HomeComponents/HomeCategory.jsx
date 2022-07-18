@@ -6,7 +6,6 @@ import { Grid } from '@chakra-ui/react';
 import { HStack } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react';
-import { Stack } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -47,29 +46,31 @@ const HomeCategory = ({ categories }) => {
           >
             {categories.map((cat) => (
               <VStack key={cat.id}>
-                <Box
-                  as={motion.div}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition="0.1s linear"
-                  position={'relative'}
-                  h={['16', '24', '36']}
-                  w={['16', '24', '36']}
-                  borderRadius={'50%'}
-                  overflow={'hidden'}
-                >
-                  <Image
-                    src={cat.image.url}
-                    objectFit={'cover'}
-                    alt={cat.image.id}
-                    layout="fill"
-                  />
-                </Box>
-
                 <NextLink href={`/${cat.__typename.toLowerCase()}/${cat.slug}`}>
-                  <Link textTransform={'capitalize'} pt={'3px'}>
-                    {cat.title}
-                  </Link>
+                  <Box textAlign="center">
+                    <Box
+                      as={motion.div}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      transition="0.1s linear"
+                      position={'relative'}
+                      h={['16', '24', '36']}
+                      w={['16', '24', '36']}
+                      borderRadius={'50%'}
+                      overflow={'hidden'}
+                    >
+                      <Image
+                        src={cat.image.url}
+                        objectFit={'cover'}
+                        alt={cat.image.id}
+                        layout="fill"
+                      />
+                    </Box>
+
+                    <Link marginTop={'10'} textTransform={'capitalize'}>
+                      {cat.title}
+                    </Link>
+                  </Box>
                 </NextLink>
               </VStack>
             ))}
@@ -77,46 +78,55 @@ const HomeCategory = ({ categories }) => {
         </VStack>
         <HStack width={'full'}>
           <VStack flexBasis={'50%'}>
-            <Box
-              as={motion.div}
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.9 }}
-              transition="0.1s linear"
-              pos={'relative'}
-              h={'64'}
-              width={'full'}
-            >
-              <Image
-                layout="fill"
-                alt="logo"
-                src="/assets/images/Vanity1.jpeg"
-                objectFit="cover"
-              />
-            </Box>
-            <Link color={'blackAlpha.900'}>
-              <Text mt="2">Shop for Vanity</Text>
-            </Link>
+            <NextLink href={'/category/vanity'}>
+              <Box width={'full'}>
+                <Box
+                  as={motion.div}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition="0.1s linear"
+                  pos={'relative'}
+                  h={'64'}
+                  width={'full'}
+                >
+                  <Image
+                    layout="fill"
+                    alt="logo"
+                    src="/assets/images/Vanity1.jpeg"
+                    objectFit="cover"
+                  />
+                </Box>
+
+                <Link color={'blackAlpha.900'}>
+                  <Text mt="2">Shop for Vanity</Text>
+                </Link>
+              </Box>
+            </NextLink>
           </VStack>
           <VStack flexBasis={'50%'}>
-            <Box
-              as={motion.div}
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.9 }}
-              transition="0.1s linear"
-              pos={'relative'}
-              h={64}
-              width={'full'}
-            >
-              <Image
-                layout="fill"
-                alt="logo"
-                src="/assets/images/Storage1.jpg"
-                objectFit="cover"
-              />
-            </Box>
-            <Link color={'blackAlpha.900'}>
-              <Text mt="2">Shop for Storage</Text>
-            </Link>
+            <NextLink href={'/category/storage'}>
+              <Box width={'full'}>
+                <Box
+                  as={motion.div}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition="0.1s linear"
+                  pos={'relative'}
+                  h={64}
+                  width={'full'}
+                >
+                  <Image
+                    layout="fill"
+                    alt="logo"
+                    src="/assets/images/Storage1.jpg"
+                    objectFit="cover"
+                  />
+                </Box>
+                <Link color={'blackAlpha.900'}>
+                  <Text mt="2">Shop for Storage</Text>
+                </Link>
+              </Box>
+            </NextLink>
           </VStack>
         </HStack>
       </VStack>

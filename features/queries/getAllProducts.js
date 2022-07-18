@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export default gql`
   query getProducts {
-    products {
+    products(first: 100) {
       title
       available
       price
@@ -16,6 +16,12 @@ export default gql`
       productImage {
         url
         id
+      }
+      categories {
+        ... on Category {
+          id
+          title
+        }
       }
     }
   }
