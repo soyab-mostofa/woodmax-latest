@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <Box>
-      <Container maxW="6xl" boxShadow="md">
+      <Container maxW="6xl">
         <Stack
           direction={['row']}
           align="center"

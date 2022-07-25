@@ -51,7 +51,7 @@ const SmallProductCard = ({ product, ...props }) => {
       position="relative"
       flexFlow={0}
       flexShrink={0}
-      flexBasis={'100%'}
+      flexBasis={{ base: '100%', md: '50%', lg: '25%' }}
       borderWidth="1px"
       rounded="md"
       {...props}

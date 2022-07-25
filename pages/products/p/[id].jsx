@@ -8,6 +8,7 @@ import {
   Stack,
   Badge,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import Rating from 'react-rating';
 import ProductImage from '../../../components/widgets/ProductImage';
 import client from '../../../features/Apollo';
@@ -62,6 +63,7 @@ function Product({ product }) {
 }
 
 export default Product;
+
 export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`

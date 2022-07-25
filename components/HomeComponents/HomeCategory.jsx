@@ -47,7 +47,7 @@ const HomeCategory = ({ categories }) => {
             {categories.map((cat) => (
               <VStack key={cat.id}>
                 <NextLink href={`/${cat.__typename.toLowerCase()}/${cat.slug}`}>
-                  <Box textAlign="center">
+                  <VStack textAlign="center">
                     <Box
                       as={motion.div}
                       whileHover={{ scale: 1.1 }}
@@ -67,10 +67,14 @@ const HomeCategory = ({ categories }) => {
                       />
                     </Box>
 
-                    <Link marginTop={'10'} textTransform={'capitalize'}>
+                    <Link
+                      marginTop={'10'}
+                      textTransform={'capitalize'}
+                      textAlign="center"
+                    >
                       {cat.title}
                     </Link>
-                  </Box>
+                  </VStack>
                 </NextLink>
               </VStack>
             ))}
