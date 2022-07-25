@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Stack } from '@chakra-ui/react';
 import {
   Text,
@@ -82,7 +83,7 @@ const HeroBanner = () => {
             width={'100%'}
             h="fit-content"
           >
-            <Image
+            <img
               layout="fill"
               src="/assets/cat-furniture-neko-kagu-gif-1.gif  "
               alt="cat sleeping"
