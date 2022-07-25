@@ -23,9 +23,13 @@ const CategoryPage = ({ category }) => {
     );
 
   return (
-    <Container maxW={'6xl'} pt={4}>
+    <Container maxW={'7xl'} pt={4}>
       <Heading py={4}>{category.title}</Heading>
-      <Flex flexWrap={'wrap'} justify="center">
+      <Flex
+        flexWrap={'wrap'}
+        justify={{ base: 'center', md: 'flex-start' }}
+        gap="4px"
+      >
         {category.products.map((p) => (
           <ProductCard product={p} key={p.id} />
         ))}
