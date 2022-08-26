@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Rating from 'react-rating';
+import SingleImageCarousel from '../../../components/SingleImageCarousel';
 import ProductImage from '../../../components/widgets/ProductImage';
 import client from '../../../features/Apollo';
 import getProduct from '../../../features/queries/getProduct';
@@ -19,8 +20,8 @@ function Product({ product }) {
   return (
     <Container maxW={'6xl'} my={'16'}>
       <Stack w={'full'} direction={['column', null, 'row']}>
-        <ProductImage image={product.productImage[0]} />
-
+        {/* <ProductImage image={product.productImage[0]} /> */}
+        <SingleImageCarousel images={product.productImage} />
         <VStack
           flexBasis={['auto', 'auto', '100%']}
           align={'flex-start'}

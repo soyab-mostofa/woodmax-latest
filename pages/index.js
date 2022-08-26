@@ -34,6 +34,7 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: getAllProducts,
   });
+
   const categories = await client.query({
     query: GET_CATEGORIES,
   });
