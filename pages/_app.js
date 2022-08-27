@@ -28,7 +28,9 @@ function MyApp({ Component, pageProps }) {
           <meta name="description" content="best furniture for dream space" />
         </Head>
         <Header />
-        <Component {...pageProps} />
+        <main style={{ paddingTop: '80px' }}>
+          <Component {...pageProps} />
+        </main>
         <Footer />
       </ChakraProvider>
     </ApolloProvider>
