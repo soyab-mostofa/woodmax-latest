@@ -56,22 +56,26 @@ const ProductCard = ({ product, ...props }) => {
         ))} */}
       </Box>
 
-      <Heading
-        _hover={{
-          background: 'white',
-          color: 'teal.500',
-        }}
-        size="md"
-        my="2"
-      >
-        <Link href={`/products/p/${product.id}`}>{product.title}</Link>
-      </Heading>
+      <Link href={`/products/p/${product.id}`}>
+        <Box>
+          <Heading
+            _hover={{
+              background: 'white',
+              color: 'teal.500',
+            }}
+            cursor="pointer"
+            size="md"
+            my="2"
+          >
+            {product.title}
+          </Heading>
 
-      <Badge variant={'solid'} fontSize={[16, 20]} colorScheme="green">
-        Taka {product.price}
-      </Badge>
-      <Text noOfLines={3}>{product.description}</Text>
-
+          <Badge variant={'solid'} fontSize={[16, 20]} colorScheme="green">
+            Taka {product.price}
+          </Badge>
+          <Text noOfLines={3}>{product.description}</Text>
+        </Box>
+      </Link>
       <Button mt={2} variant={'solid'}>
         ADD TO CART
       </Button>

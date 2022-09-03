@@ -73,7 +73,7 @@ const Header = () => {
     <Box pos={'fixed'} zIndex={200} width={'100%'} height={20}>
       {show && (
         <Box
-          bg={'gray.200'}
+          bg={'whiteAlpha.900'}
           pos={'fixed'}
           zIndex={200}
           width={'100%'}
@@ -126,9 +126,9 @@ const Header = () => {
                     <NextLink href={`/products/all-products`}>
                       <Link fontWeight="bold">Products</Link>
                     </NextLink>
-                    <NextLink href={`/products/blogs`}>
+                    {/* <NextLink href={`/products/blogs`}>
                       <Link fontWeight="bold">Blogs</Link>
-                    </NextLink>
+                    </NextLink> */}
                   </HStack>
                   <Link href="/account">
                     <BsPerson size={30} />

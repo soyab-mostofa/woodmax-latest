@@ -7,6 +7,7 @@ import {
   VStack,
   Stack,
   Badge,
+  Box,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Rating from 'react-rating';
@@ -18,7 +19,7 @@ import getProduct from '../../../features/queries/getProduct';
 function Product({ product }) {
   if (!product) return null;
   return (
-    <Container maxW={'6xl'} my={'16'}>
+    <Box my={'16'}>
       <Stack w={'full'} direction={['column', null, 'row']}>
         {/* <ProductImage image={product.productImage[0]} /> */}
         <SingleImageCarousel images={product.productImage} />
@@ -59,7 +60,7 @@ function Product({ product }) {
           <Button variant={'solid'}>Add to cart</Button>
         </VStack>
       </Stack>
-    </Container>
+    </Box>
   );
 }
 

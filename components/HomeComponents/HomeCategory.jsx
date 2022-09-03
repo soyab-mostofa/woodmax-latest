@@ -50,13 +50,14 @@ const HomeCategory = ({ categories }) => {
                   <VStack textAlign="center">
                     <Box
                       as={motion.div}
+                      bg={'whitesmoke'}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       transition="0.1s linear"
                       position={'relative'}
-                      h={['16', '24', '36']}
-                      w={['16', '24', '36']}
-                      borderRadius={'50%'}
+                      h={['24', '36', '40']}
+                      w={['24', '36', '40']}
+                      borderRadius={'10px'}
                       overflow={'hidden'}
                     >
                       <Image

@@ -18,7 +18,7 @@ const AllProductsPage = (props) => {
 
   return (
     <Container maxW={'8xl'} mt={4}>
-      <FilterBar allCategories={allCategories} />
+      {/* <FilterBar allCategories={allCategories} /> */}
       <Flex flexWrap={'wrap'} justify="center" gap={'4'}>
         {filteredProducts.map((product) => (
           <GridItem key={product.id}>
